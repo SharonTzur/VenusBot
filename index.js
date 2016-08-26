@@ -5,11 +5,20 @@ var app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.listen((process.env.PORT || 3000));
 
 // Server frontpaggit inite
-app.get('/', function (req, res) {
-    res.send('This is TestBot Server');
+
+
+app.set('port', (process.env.PORT || 5000));
+
+
+app.get('/', function (request, response) {
+    response.send('This is TestBot Server');
+
+});
+
+app.listen(app.get('port'), function () {
+    console.log('Node app is running on port', app.get('port'));
 });
 
 // Facebook Webhook
