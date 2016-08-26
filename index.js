@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.listen((process.env.PORT || 3000));
 
-// Server frontpage
+// Server frontpaggit inite
 app.get('/', function (req, res) {
     res.send('This is TestBot Server');
 });
